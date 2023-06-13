@@ -9,33 +9,38 @@
 </head>
 
 <body>
-    <h1>Добавить товар</h1>
-    <form action="https://jsonplaceholder.typicode.com/posts" method="POST">
+    <h2>Добавить товар</h2>
+    <form name="my-form" action="https://jsonplaceholder.typicode.com/posts" method="POST">
         <fieldset>
-            <label>Наименование<br />
-                <input type="text" name="name" /></label>
-            <br />
-            <label>Категория<br />
-                <input type="text" name="category" /></label>
-            <br />
-            <label>Единицы измерения<br />
-                <input type="text" name="units" /><br /></label>
-            <label>Дисконт<br />
-                <input type="checkbox" name="discount" /></label>
-            <input type="text" name="discount" disabled />
-            <br />
-            <label>Описание <br />
-                <textarea name="description"></textarea>
-            </label>
-            <br />
-            <label>Количество<br />
-                <input type="number" name="count" /><br /></label>
-            <label>Цена<br />
-                <input type="number" name="price" /><br /></label>
-            <br />
-            <input type="file" name="image" accept="image/*" /><br />
+            <label for="name">Наименование</label>
+            <input type="text" name="name" id="name" required />
+
+            <label for="category">Категория</label>
+            <input type="text" name="category" id="category" required />
+
+            <label for="units">Единицы измерения</label>
+            <input type="text" name="units" id="units" required />
+
+
+            <label for="discount">Дисконт</label>
+            <div>
+                <input type="checkbox" aria-label="">
+                <input type="text" name="discount" id="discount" disabled required />
+            </div>
+
+            <label for="description">Описание </label>
+            <textarea name="description" id="description" rows="6" required></textarea>
+
+            <label for="count">Количество</label>
+            <input type="number" name="count" id="count" required />
+
+            <label for="price">Цена</label>
+            <input type="number" name="price" id="price" required />
+
+            <label for="image"></label>
+            <input type="file" name="image" id="image" accept=".png, .jpg, .jpeg" />
         </fieldset>
-        <br />
+
         <button type="submit">Добавить товар</button>
     </form>
 </body>
